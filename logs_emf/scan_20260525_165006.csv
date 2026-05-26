@@ -1,0 +1,19 @@
+timestamp,datetime,type,ssid_name,mac,rssi_dbm,distance_m,level,whitelisted,manufacturer,mac_random,device_type,hidden_network
+1779745818.6228411,2026-05-25 16:50:18,WIFI,WILLIANS,EA:4D:74:53:55:78,-44,0.28,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745822.5895252,2026-05-25 16:50:22,WIFI,WILLIANS,EA:4D:74:53:55:78,-45,0.3,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745830.6369371,2026-05-25 16:50:30,WIFI,WILLIANS,EA:4D:74:53:55:78,-52,0.55,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745834.661115,2026-05-25 16:50:34,WIFI,WILLIANS,EA:4D:74:53:55:78,-53,0.6,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745838.7288737,2026-05-25 16:50:38,WIFI,WILLIANS,EA:4D:74:53:55:78,-50,0.46,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745842.779908,2026-05-25 16:50:42,WIFI,WILLIANS,EA:4D:74:53:55:78,-47,0.36,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745846.7869039,2026-05-25 16:50:46,WIFI,WILLIANS,EA:4D:74:53:55:78,-45,0.3,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745850.7605472,2026-05-25 16:50:50,WIFI,WILLIANS,EA:4D:74:53:55:78,-46,0.33,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745854.7723863,2026-05-25 16:50:54,WIFI,WILLIANS,EA:4D:74:53:55:78,-46,0.33,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745858.7909777,2026-05-25 16:50:58,WIFI,WILLIANS,EA:4D:74:53:55:78,-43,0.26,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745858.7918773,2026-05-25 16:50:58,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779745862.7240458,2026-05-25 16:51:02,WIFI,WILLIANS,EA:4D:74:53:55:78,-45,0.3,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745862.7250388,2026-05-25 16:51:02,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779745866.7575197,2026-05-25 16:51:06,WIFI,WILLIANS,EA:4D:74:53:55:78,-47,0.36,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745866.7575197,2026-05-25 16:51:06,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779745870.7891889,2026-05-25 16:51:10,WIFI,WILLIANS,EA:4D:74:53:55:78,-51,0.51,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745874.8173108,2026-05-25 16:51:14,WIFI,WILLIANS,EA:4D:74:53:55:78,-54,0.65,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779745878.7986119,2026-05-25 16:51:18,WIFI,WILLIANS,EA:4D:74:53:55:78,-55,0.71,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False

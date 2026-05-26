@@ -1,0 +1,146 @@
+=== Sesión EMF iniciada 20260525_172512 ===
+[2026-05-25 17:25:12] [INFO] Conectado a COM5
+[2026-05-25 17:25:14] [INFO] ESP32 listo: ESP32 EMF Detector listo
+[2026-05-25 17:25:20] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:20] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-41dBm | ~0.22m
+[2026-05-25 17:25:20] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:25:20] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:24] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:24] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-41dBm | ~0.22m
+[2026-05-25 17:25:24] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-46dBm | ~0.33m
+[2026-05-25 17:25:24] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:28] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:28] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-39dBm | ~0.18m
+[2026-05-25 17:25:28] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-50dBm | ~0.46m
+[2026-05-25 17:25:28] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:32] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:32] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-41dBm | ~0.22m
+[2026-05-25 17:25:32] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-58dBm | ~0.92m
+[2026-05-25 17:25:32] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:36] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:36] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:25:36] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-54dBm | ~0.65m
+[2026-05-25 17:25:36] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:40] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:40] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:25:40] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-57dBm | ~0.84m
+[2026-05-25 17:25:40] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:44] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:44] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:25:44] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-59dBm | ~1.0m
+[2026-05-25 17:25:44] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:48] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:48] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:25:48] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-61dBm | ~1.19m
+[2026-05-25 17:25:48] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:52] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:52] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:25:52] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-60dBm | ~1.09m
+[2026-05-25 17:25:52] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:25:56] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:25:56] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:25:56] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-43dBm | ~0.26m
+[2026-05-25 17:25:56] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:00] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:26:00] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:26:00] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-65dBm | ~1.67m
+[2026-05-25 17:26:00] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:04] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:26:04] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:26:04] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-60dBm | ~1.09m
+[2026-05-25 17:26:04] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:08] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:26:08] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-42dBm | ~0.23m
+[2026-05-25 17:26:08] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-55dBm | ~0.71m
+[2026-05-25 17:26:08] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:12] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:26:12] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-41dBm | ~0.22m
+[2026-05-25 17:26:12] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-50dBm | ~0.46m
+[2026-05-25 17:26:12] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:16] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:26:16] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-41dBm | ~0.22m
+[2026-05-25 17:26:16] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-53dBm | ~0.6m
+[2026-05-25 17:26:16] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:20] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:26:20] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-37dBm | ~0.15m
+[2026-05-25 17:26:20] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-47dBm | ~0.36m
+[2026-05-25 17:26:20] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:24] [CRITICAL] 🚨 CRÍTICO: 2 dispositivo(s) muy cerca!
+[2026-05-25 17:26:24] [CRITICAL]   [WIFI] HONOR X7 | MAC Aleatoria (Privacidad) | MAC:6A:B0:2F:CD:2A:C8 | RSSI:-40dBm | ~0.2m
+[2026-05-25 17:26:24] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-54dBm | ~0.65m
+[2026-05-25 17:26:24] [WARNING] 🔵 2 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:28] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:28] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-54dBm | ~0.65m
+[2026-05-25 17:26:28] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:32] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:32] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-55dBm | ~0.71m
+[2026-05-25 17:26:32] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:36] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:36] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-51dBm | ~0.51m
+[2026-05-25 17:26:36] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:40] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:40] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:26:40] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:44] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:44] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-44dBm | ~0.28m
+[2026-05-25 17:26:44] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:48] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:48] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-47dBm | ~0.36m
+[2026-05-25 17:26:48] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:52] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:52] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-46dBm | ~0.33m
+[2026-05-25 17:26:52] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:26:56] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:26:56] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-46dBm | ~0.33m
+[2026-05-25 17:26:56] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:00] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:00] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:27:00] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:04] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:04] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-46dBm | ~0.33m
+[2026-05-25 17:27:04] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:08] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:08] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-47dBm | ~0.36m
+[2026-05-25 17:27:08] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:12] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:12] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:27:12] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:16] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:16] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-46dBm | ~0.33m
+[2026-05-25 17:27:16] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:20] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:20] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-44dBm | ~0.28m
+[2026-05-25 17:27:20] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:24] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:24] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-47dBm | ~0.36m
+[2026-05-25 17:27:24] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:28] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:28] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:27:28] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:32] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:32] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:27:32] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:36] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:36] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:27:36] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:40] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:40] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-46dBm | ~0.33m
+[2026-05-25 17:27:40] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:44] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:44] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-47dBm | ~0.36m
+[2026-05-25 17:27:44] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:48] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:48] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:27:48] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:52] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:52] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-47dBm | ~0.36m
+[2026-05-25 17:27:52] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:27:56] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:27:56] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:27:56] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:28:00] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:28:00] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-45dBm | ~0.3m
+[2026-05-25 17:28:00] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-25 17:28:04] [CRITICAL] 🚨 CRÍTICO: 1 dispositivo(s) muy cerca!
+[2026-05-25 17:28:04] [CRITICAL]   [WIFI] WILLIANS | MAC Aleatoria (Privacidad) | MAC:EA:4D:74:53:55:78 | RSSI:-46dBm | ~0.33m
+[2026-05-25 17:28:04] [WARNING] 🔵 1 dispositivo(s) con MAC aleatoria (celular/laptop moderno).

@@ -1,0 +1,17 @@
+timestamp,datetime,type,ssid_name,mac,rssi_dbm,distance_m,level,whitelisted,manufacturer,mac_random,device_type,hidden_network
+1779748140.6703775,2026-05-25 17:29:00,WIFI,WILLIANS,EA:4D:74:53:55:78,-51,0.51,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748140.671388,2026-05-25 17:29:00,WIFI,W10,18:D6:C7:E0:C1:FE,-74,3.59,WARNING,False,TP-Link Technologies,False,Desconocido,False
+1779748144.4406958,2026-05-25 17:29:04,WIFI,WILLIANS,EA:4D:74:53:55:78,-46,0.33,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748144.4415994,2026-05-25 17:29:04,WIFI,W10,18:D6:C7:E0:C1:FE,-75,3.91,WARNING,False,TP-Link Technologies,False,Desconocido,False
+1779748148.4582636,2026-05-25 17:29:08,WIFI,WILLIANS,EA:4D:74:53:55:78,-50,0.46,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748148.4597719,2026-05-25 17:29:08,WIFI,W10,18:D6:C7:E0:C1:FE,-76,4.26,WARNING,False,TP-Link Technologies,False,Desconocido,False
+1779748152.4831445,2026-05-25 17:29:12,WIFI,WILLIANS,EA:4D:74:53:55:78,-50,0.46,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748152.4831445,2026-05-25 17:29:12,WIFI,W10,18:D6:C7:E0:C1:FE,-76,4.26,WARNING,False,TP-Link Technologies,False,Desconocido,False
+1779748156.4443908,2026-05-25 17:29:16,WIFI,WILLIANS,EA:4D:74:53:55:78,-47,0.36,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748156.4443908,2026-05-25 17:29:16,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,TP-Link Technologies,False,Desconocido,False
+1779748160.6068034,2026-05-25 17:29:20,WIFI,WILLIANS,EA:4D:74:53:55:78,-61,1.19,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748160.6078024,2026-05-25 17:29:20,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,TP-Link Technologies,False,Desconocido,False
+1779748164.6249092,2026-05-25 17:29:24,WIFI,WILLIANS,EA:4D:74:53:55:78,-59,1.0,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748164.6259089,2026-05-25 17:29:24,WIFI,W10,18:D6:C7:E0:C1:FE,-76,4.26,WARNING,False,TP-Link Technologies,False,Desconocido,False
+1779748168.6413033,2026-05-25 17:29:28,WIFI,WILLIANS,EA:4D:74:53:55:78,-56,0.77,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779748168.6413033,2026-05-25 17:29:28,WIFI,W10,18:D6:C7:E0:C1:FE,-75,3.91,WARNING,False,TP-Link Technologies,False,Desconocido,False

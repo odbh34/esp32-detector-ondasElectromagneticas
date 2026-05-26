@@ -1,0 +1,336 @@
+=== Sesión EMF iniciada 20260526_135329 ===
+[2026-05-26 13:53:29] [INFO] Conectado a COM5
+[2026-05-26 13:53:31] [INFO] ESP32 listo: ESP32 EMF Detector listo
+[2026-05-26 13:53:38] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:53:38] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-54dBm | ~0.65m
+[2026-05-26 13:53:38] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:53:38] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:53:38] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:53:38] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:53:38] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:53:38] [CRITICAL]   [BLE] Desconocido | Desconocido | MAC:29:ec:18:f0:2d:47 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:53:38] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:53:42] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:53:42] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-55dBm | ~0.71m
+[2026-05-26 13:53:42] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:53:42] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:53:42] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:53:42] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:53:42] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:53:42] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:53:46] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:53:46] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-53dBm | ~0.6m
+[2026-05-26 13:53:47] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:53:47] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:53:47] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:53:47] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:53:47] [CRITICAL]   [BLE] Desconocido | Desconocido | MAC:29:ec:18:f0:2d:47 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:53:47] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:53:51] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:53:51] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-53dBm | ~0.6m
+[2026-05-26 13:53:51] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:53:51] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:53:51] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:53:51] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:53:51] [CRITICAL]   [BLE] Desconocido | Desconocido | MAC:29:ec:18:f0:2d:47 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:53:51] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:53:55] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:53:55] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-53dBm | ~0.6m
+[2026-05-26 13:53:55] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:53:55] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:53:55] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:53:55] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:53:55] [CRITICAL]   [BLE] Desconocido | Desconocido | MAC:29:ec:18:f0:2d:47 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:53:55] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:53:55] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:53:59] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:53:59] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-53dBm | ~0.6m
+[2026-05-26 13:53:59] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:53:59] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:00] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:00] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:00] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:00] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:04] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:54:04] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:04] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:04] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:04] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:04] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:04] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:04] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:54:04] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:04] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:08] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:08] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-55dBm | ~0.71m
+[2026-05-26 13:54:08] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:08] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:08] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:08] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:08] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:09] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:54:09] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:12] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:54:12] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-52dBm | ~0.55m
+[2026-05-26 13:54:12] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:12] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:12] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:12] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:13] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:13] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:13] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:13] [WARNING] 🔵 14 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:17] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:54:17] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-52dBm | ~0.55m
+[2026-05-26 13:54:17] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:17] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:17] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:17] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:17] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:17] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:54:17] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:17] [WARNING] 🔵 16 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:21] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:54:21] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-57dBm | ~0.84m
+[2026-05-26 13:54:21] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:54:21] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:21] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:21] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:21] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:21] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:21] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:54:21] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:25] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:25] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-53dBm | ~0.6m
+[2026-05-26 13:54:25] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:25] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:25] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:25] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:26] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:26] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:26] [WARNING] 🔵 19 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:29] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:29] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-56dBm | ~0.77m
+[2026-05-26 13:54:30] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:30] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:30] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:30] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:30] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:30] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:30] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:34] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:34] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-46dBm | ~0.33m
+[2026-05-26 13:54:34] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:34] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:34] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:34] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:34] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:34] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:34] [WARNING] 🔵 12 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:38] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:38] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-52dBm | ~0.55m
+[2026-05-26 13:54:38] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:38] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:38] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:38] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:38] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:39] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:39] [WARNING] 🔵 16 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:42] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:42] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-56dBm | ~0.77m
+[2026-05-26 13:54:43] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:54:43] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:54:43] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:43] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:43] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:43] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:54:43] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:47] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:47] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-49dBm | ~0.43m
+[2026-05-26 13:54:47] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:47] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:47] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:54:47] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:47] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:47] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:47] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:51] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:54:51] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-49dBm | ~0.43m
+[2026-05-26 13:54:51] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-58dBm | ~0.92m
+[2026-05-26 13:54:51] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:54:51] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:51] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:51] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:51] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:51] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:52] [WARNING] 🔵 14 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:54:55] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:54:55] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-50dBm | ~0.46m
+[2026-05-26 13:54:55] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:54:55] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:54:56] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:56] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:54:56] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:54:56] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:54:56] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:00] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:55:00] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-51dBm | ~0.51m
+[2026-05-26 13:55:00] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-57dBm | ~0.84m
+[2026-05-26 13:55:00] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:00] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:00] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:00] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:55:00] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:00] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:00] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:04] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:55:04] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-50dBm | ~0.46m
+[2026-05-26 13:55:04] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-57dBm | ~0.84m
+[2026-05-26 13:55:04] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:04] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:04] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:04] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:55:04] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:55:04] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:55:04] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:08] [CRITICAL] 🚨 CRÍTICO: 8 dispositivo(s) muy cerca!
+[2026-05-26 13:55:08] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-51dBm | ~0.51m
+[2026-05-26 13:55:08] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-58dBm | ~0.92m
+[2026-05-26 13:55:08] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:08] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:09] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:09] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:55:09] [CRITICAL]   [WIFI] Galaxy A02scfe9 | Desconocido | MAC:D4:E9:F4:C4:01:41 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:09] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:55:09] [WARNING] 🔵 19 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:12] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:55:12] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-39dBm | ~0.18m
+[2026-05-26 13:55:13] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:55:13] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:13] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:13] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:13] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:55:13] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:17] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:55:17] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-37dBm | ~0.15m
+[2026-05-26 13:55:17] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:17] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:17] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:17] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:17] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:17] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:17] [WARNING] 🔵 19 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:21] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:55:21] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-33dBm | ~0.11m
+[2026-05-26 13:55:21] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-58dBm | ~0.92m
+[2026-05-26 13:55:21] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:55:21] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:21] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:21] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:21] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:55:21] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:25] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:55:25] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-32dBm | ~0.1m
+[2026-05-26 13:55:25] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:25] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:26] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:26] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:26] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:55:26] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:30] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:55:30] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-33dBm | ~0.11m
+[2026-05-26 13:55:30] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:30] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:30] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:30] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:30] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:55:30] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:55:30] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:34] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:55:34] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-30dBm | ~0.08m
+[2026-05-26 13:55:34] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:34] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:34] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:34] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:34] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:55:34] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:34] [WARNING] 🔵 19 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:38] [CRITICAL] 🚨 CRÍTICO: 3 dispositivo(s) muy cerca!
+[2026-05-26 13:55:38] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-35dBm | ~0.13m
+[2026-05-26 13:55:38] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:55:38] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:55:38] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:43] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:55:43] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-33dBm | ~0.11m
+[2026-05-26 13:55:43] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-58dBm | ~0.92m
+[2026-05-26 13:55:43] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-59dBm | ~1.0m
+[2026-05-26 13:55:43] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:43] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:55:43] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:43] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:55:43] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:47] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:55:47] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-33dBm | ~0.11m
+[2026-05-26 13:55:47] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-57dBm | ~0.84m
+[2026-05-26 13:55:47] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:47] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:47] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:47] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:47] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:55:47] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:51] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:55:51] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-30dBm | ~0.08m
+[2026-05-26 13:55:51] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-58dBm | ~0.92m
+[2026-05-26 13:55:51] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:51] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:51] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:52] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:52] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:55:55] [CRITICAL] 🚨 CRÍTICO: 7 dispositivo(s) muy cerca!
+[2026-05-26 13:55:55] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-30dBm | ~0.08m
+[2026-05-26 13:55:55] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-57dBm | ~0.84m
+[2026-05-26 13:55:56] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:56] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-60dBm | ~1.09m
+[2026-05-26 13:55:56] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:55:56] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:55:56] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:55:56] [WARNING] 🔵 15 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:56:00] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:56:00] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-30dBm | ~0.08m
+[2026-05-26 13:56:00] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:56:00] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:56:00] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:56:00] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:56:00] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:56:00] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:56:04] [INFO] Calibración enviada: 0.15m / -30dBm
+[2026-05-26 13:56:04] [CRITICAL] 🚨 CRÍTICO: 6 dispositivo(s) muy cerca!
+[2026-05-26 13:56:04] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-31dBm | ~0.09m
+[2026-05-26 13:56:04] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-61dBm | ~1.19m
+[2026-05-26 13:56:04] [CRITICAL]   [WIFI] RCU - ADMIN | ZTE | MAC:90:4C:81:9F:35:80 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:56:04] [CRITICAL]   [WIFI] RCU - ALUMNOS | ZTE | MAC:90:4C:81:9F:35:81 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:56:04] [CRITICAL]   [WIFI] RCU - DOCENTES | ZTE | MAC:90:4C:81:9F:35:82 | RSSI:-62dBm | ~1.29m
+[2026-05-26 13:56:04] [CRITICAL]   [WIFI] Galaxy A02scfe9 | MAC Aleatoria (Privacidad) | MAC:FE:B2:E4:D4:43:AA | RSSI:-67dBm | ~1.98m
+[2026-05-26 13:56:04] [WARNING] 🔵 19 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:56:05] [INFO] Calibración OK: TxPower=-52.2dBm
+[2026-05-26 13:56:08] [CRITICAL] 🚨 CRÍTICO: 3 dispositivo(s) muy cerca!
+[2026-05-26 13:56:08] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-32dBm | ~0.18m
+[2026-05-26 13:56:08] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-60dBm | ~1.94m
+[2026-05-26 13:56:08] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-65dBm | ~1.67m
+[2026-05-26 13:56:09] [WARNING] 🔵 20 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:56:13] [CRITICAL] 🚨 CRÍTICO: 3 dispositivo(s) muy cerca!
+[2026-05-26 13:56:13] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-31dBm | ~0.16m
+[2026-05-26 13:56:13] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-58dBm | ~1.63m
+[2026-05-26 13:56:13] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-63dBm | ~1.41m
+[2026-05-26 13:56:13] [WARNING] 🔵 19 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:56:17] [CRITICAL] 🚨 CRÍTICO: 3 dispositivo(s) muy cerca!
+[2026-05-26 13:56:17] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-33dBm | ~0.19m
+[2026-05-26 13:56:17] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-60dBm | ~1.94m
+[2026-05-26 13:56:17] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-66dBm | ~1.82m
+[2026-05-26 13:56:17] [WARNING] 🔵 18 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:56:21] [CRITICAL] 🚨 CRÍTICO: 3 dispositivo(s) muy cerca!
+[2026-05-26 13:56:21] [CRITICAL]   [WIFI] Redmi 15 | MAC Aleatoria (Privacidad) | MAC:6A:1B:3A:C2:23:3A | RSSI:-50dBm | ~0.83m
+[2026-05-26 13:56:21] [CRITICAL]   [WIFI] TECNO SPARK 20 | MAC Aleatoria (Privacidad) | MAC:92:20:93:C3:A2:7C | RSSI:-60dBm | ~1.94m
+[2026-05-26 13:56:22] [CRITICAL]   [BLE] Desconocido | MAC Aleatoria (Privacidad) | MAC:2f:83:dd:5a:69:38 | RSSI:-64dBm | ~1.53m
+[2026-05-26 13:56:22] [WARNING] 🔵 17 dispositivo(s) con MAC aleatoria (celular/laptop moderno).
+[2026-05-26 13:56:25] [WARNING] Error serial: byref() argument must be a ctypes instance, not 'NoneType'

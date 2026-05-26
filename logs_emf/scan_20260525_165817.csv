@@ -1,0 +1,54 @@
+timestamp,datetime,type,ssid_name,mac,rssi_dbm,distance_m,level,whitelisted,manufacturer,mac_random,device_type,hidden_network
+1779746305.8871982,2026-05-25 16:58:25,WIFI,WILLIANS,EA:4D:74:53:55:78,-51,0.51,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746305.8871982,2026-05-25 16:58:25,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746309.6824067,2026-05-25 16:58:29,WIFI,WILLIANS,EA:4D:74:53:55:78,-49,0.43,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746313.6684225,2026-05-25 16:58:33,WIFI,WILLIANS,EA:4D:74:53:55:78,-55,0.71,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746317.7005842,2026-05-25 16:58:37,WIFI,WILLIANS,EA:4D:74:53:55:78,-60,1.09,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746317.7015736,2026-05-25 16:58:37,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746321.7417731,2026-05-25 16:58:41,WIFI,WILLIANS,EA:4D:74:53:55:78,-61,1.19,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746325.7755663,2026-05-25 16:58:45,WIFI,WILLIANS,EA:4D:74:53:55:78,-60,1.09,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746329.8272345,2026-05-25 16:58:49,WIFI,WILLIANS,EA:4D:74:53:55:78,-62,1.29,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746329.828241,2026-05-25 16:58:49,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746337.8191667,2026-05-25 16:58:57,WIFI,WILLIANS,EA:4D:74:53:55:78,-60,1.09,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746337.8191667,2026-05-25 16:58:57,WIFI,W10,18:D6:C7:E0:C1:FE,-76,4.26,WARNING,False,Desconocido,False,Desconocido,False
+1779746341.7925115,2026-05-25 16:59:01,WIFI,WILLIANS,EA:4D:74:53:55:78,-62,1.29,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746341.7925115,2026-05-25 16:59:01,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746345.7990663,2026-05-25 16:59:05,WIFI,WILLIANS,EA:4D:74:53:55:78,-63,1.41,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746345.8000576,2026-05-25 16:59:05,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746349.8134065,2026-05-25 16:59:09,WIFI,WILLIANS,EA:4D:74:53:55:78,-64,1.53,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746349.8150024,2026-05-25 16:59:09,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746353.812876,2026-05-25 16:59:13,WIFI,WILLIANS,EA:4D:74:53:55:78,-65,1.67,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746353.8137665,2026-05-25 16:59:13,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746357.8086395,2026-05-25 16:59:17,WIFI,WILLIANS,EA:4D:74:53:55:78,-67,1.98,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746361.8296993,2026-05-25 16:59:21,WIFI,WILLIANS,EA:4D:74:53:55:78,-66,1.82,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746361.8307006,2026-05-25 16:59:21,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746365.8114972,2026-05-25 16:59:25,WIFI,WILLIANS,EA:4D:74:53:55:78,-64,1.53,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746369.8192005,2026-05-25 16:59:29,WIFI,WILLIANS,EA:4D:74:53:55:78,-60,1.09,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746373.85637,2026-05-25 16:59:33,WIFI,WILLIANS,EA:4D:74:53:55:78,-61,1.19,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746377.8679047,2026-05-25 16:59:37,WIFI,WILLIANS,EA:4D:74:53:55:78,-61,1.19,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746381.8412735,2026-05-25 16:59:41,WIFI,WILLIANS,EA:4D:74:53:55:78,-62,1.29,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746381.8412735,2026-05-25 16:59:41,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746385.8356016,2026-05-25 16:59:45,WIFI,WILLIANS,EA:4D:74:53:55:78,-59,1.0,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746385.836613,2026-05-25 16:59:45,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746389.8982034,2026-05-25 16:59:49,WIFI,WILLIANS,EA:4D:74:53:55:78,-58,0.92,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746389.8992095,2026-05-25 16:59:49,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746393.8496866,2026-05-25 16:59:53,WIFI,WILLIANS,EA:4D:74:53:55:78,-50,0.46,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746397.8901656,2026-05-25 16:59:57,WIFI,WILLIANS,EA:4D:74:53:55:78,-53,0.6,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746401.907676,2026-05-25 17:00:01,WIFI,WILLIANS,EA:4D:74:53:55:78,-48,0.39,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746405.8987002,2026-05-25 17:00:05,WIFI,WILLIANS,EA:4D:74:53:55:78,-53,0.6,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746409.9276597,2026-05-25 17:00:09,WIFI,WILLIANS,EA:4D:74:53:55:78,-54,0.65,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746413.8959396,2026-05-25 17:00:13,WIFI,WILLIANS,EA:4D:74:53:55:78,-57,0.84,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746417.8996904,2026-05-25 17:00:17,WIFI,WILLIANS,EA:4D:74:53:55:78,-49,0.43,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746421.967617,2026-05-25 17:00:21,WIFI,WILLIANS,EA:4D:74:53:55:78,-55,0.71,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746421.967617,2026-05-25 17:00:21,WIFI,W10,18:D6:C7:E0:C1:FE,-77,4.64,WARNING,False,Desconocido,False,Desconocido,False
+1779746425.9087176,2026-05-25 17:00:25,WIFI,WILLIANS,EA:4D:74:53:55:78,-52,0.55,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746429.896026,2026-05-25 17:00:29,WIFI,WILLIANS,EA:4D:74:53:55:78,-53,0.6,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746433.9173915,2026-05-25 17:00:33,WIFI,WILLIANS,EA:4D:74:53:55:78,-54,0.65,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746437.9383717,2026-05-25 17:00:37,WIFI,WILLIANS,EA:4D:74:53:55:78,-57,0.84,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746441.8839808,2026-05-25 17:00:41,WIFI,WILLIANS,EA:4D:74:53:55:78,-49,0.43,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746445.9482977,2026-05-25 17:00:45,WIFI,WILLIANS,EA:4D:74:53:55:78,-48,0.39,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746449.9373555,2026-05-25 17:00:49,WIFI,WILLIANS,EA:4D:74:53:55:78,-48,0.39,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746453.946355,2026-05-25 17:00:53,WIFI,WILLIANS,EA:4D:74:53:55:78,-49,0.43,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746457.932238,2026-05-25 17:00:57,WIFI,WILLIANS,EA:4D:74:53:55:78,-48,0.39,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746461.9275186,2026-05-25 17:01:01,WIFI,WILLIANS,EA:4D:74:53:55:78,-50,0.46,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
+1779746465.9221556,2026-05-25 17:01:05,WIFI,WILLIANS,EA:4D:74:53:55:78,-47,0.36,CRITICAL,False,MAC Aleatoria (Privacidad),True,Smartphone moderno,False
