@@ -6,6 +6,12 @@ Sistema IoT de detección de dispositivos electrónicos no autorizados mediante 
 
 ---
 
+## Capturas
+
+![Dashboard EMF](image.png)
+
+---
+
 ## Estructura del Proyecto
 
 ```
