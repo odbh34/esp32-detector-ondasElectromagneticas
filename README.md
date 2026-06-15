@@ -1,14 +1,8 @@
-# Detector Electromagnético ESP32 + Dashboard PC
+# Detector Electromagnético ESP32 + EC2 Cloud
 
 **Alumno:** Oscar David Barrientos Huillca - 225419
 
-Sistema IoT de detección de dispositivos electrónicos no autorizados mediante escaneo WiFi y BLE. El ESP32 escanea redes WiFi y dispositivos Bluetooth Low Energy, calcula distancias estimadas usando el modelo Log-Distance Path Loss, clasifica niveles de amenaza (INFO/WARNING/CRITICAL) y envía los resultados por Serial a un **dashboard PC** desarrollado en Python con CustomTkinter, diseñado para entornos de admisión y supervisión de exámenes.
-
----
-
-## Capturas
-
-> *(Agregar capturas aquí — dashboard, detección de dispositivos, alertas)*
+Sistema IoT de detección de dispositivos electrónicos no autorizados mediante escaneo WiFi y BLE. El ESP32 escanea redes WiFi y dispositivos Bluetooth Low Energy, calcula distancias estimadas usando el modelo Log-Distance Path Loss, clasifica niveles de amenaza (INFO/WARNING/CRITICAL) y envía los resultados por WebSocket a un **servidor EC2** que sirve un **dashboard web** en tiempo real, diseñado para entornos de admisión y supervisión de exámenes.
 
 ---
 
@@ -16,23 +10,20 @@ Sistema IoT de detección de dispositivos electrónicos no autorizados mediante 
 
 ```
 detector-electromagnetico/
-├── src/
-│   └── main.cpp                       # Firmware ESP32 (PlatformIO)
+├── platformIO/                     # Firmware ESP32 (PlatformIO)
+│   ├── src/main.cpp                # Escáner WiFi + BLE con WebSocket
+│   ├── platformio.ini              # Configuración ESP32
+│   ├── .gitignore
+│   ├── .vscode/                    # Config IDE auto-generada
+│   └── logs_emf/                   # Sesiones de escaneo (CSV + logs)
 │
-├── dashboard.py                       # Dashboard PC v1 (CustomTkinter)
-├── dashboard_v2.py                    # Dashboard PC v2 + OUI + MAC aleatorias
-├── dashboard_v3.py                    # Dashboard PC v3 + detección ISP/Hotspot
-├── oui_db.py                          # Base de datos OUI offline (~500 fabricantes)
+├── aws/                            # Servidor Cloud EC2
+│   ├── app.py                      # WebSocket server (FastAPI + uvicorn)
+│   └── emf.html                    # Dashboard web (JS + WebSocket)
 │
-├── platformio.ini                     # Configuración ESP32 + ArduinoJson + NimBLE
-│
-├── logs_emf/                          # Sesiones de escaneo (CSV + logs)
-│   ├── scan_*.csv                     # Datos crudos de detecciones
-│   └── session_*.txt                  # Registro de eventos en sesión
-│
-├── include/                           # PlatformIO placeholder
-├── lib/                               # PlatformIO placeholder
-└── test/                              # PlatformIO placeholder
+├── README.md
+├── image.png
+└── oui.txt                         # Lista OUI de referencia
 ```
 
 ---
@@ -42,23 +33,34 @@ detector-electromagnetico/
 ```
 ESP32 (WiFi + BLE Scanner)
        │
-       │ Serial (JSON) @ 115200 baud
-       │ Protocolo: SCAN_REPORT, HEARTBEAT, BOOT, ACK, etc.
+       │ WebSocket JSON @ 8765
+       │ Protocolo: SCAN_REPORT, HEARTBEAT, etc.
        │ Comandos: SET_MODEL, SET_THRESHOLDS, CALIBRATE, etc.
        ▼
-┌──────────────────────────┐
-│   Dashboard PC (Python)  │
-│   CustomTkinter UI       │
-│                          │
-│   • Tabla de dispositivos│
-│   • Alertas sonoras/visuales
-│   • Exportación CSV      │
-│   • Calibración en vivo  │
-│   • Lista blanca (SSID/MAC)
-│   • Identificación OUI   │
-│   • Detección ISP/Hotspot│
-│   • Perfil de riesgo     │
-└──────────────────────────┘
+┌───────────────────────────────────┐
+│  EC2 (FastAPI + WebSocket Server)  │
+│  app.py — Puerto 8765             │
+│                                   │
+│  • Recibe datos del ESP32         │
+│  • Broadcast a navegadores        │
+│  • Reenvía comandos al ESP32      │
+│  • Logging persistente            │
+└───────────┬───────────────────────┘
+            │
+            │ WebSocket @ /ws
+            ▼
+┌───────────────────────────────────┐
+│  Dashboard Web (emf.html)         │
+│  • Tabla de dispositivos          │
+│  • Alertas visuales               │
+│  • Identificación OUI             │
+│  • Detección ISP / Hotspot        │
+│  • MAC aleatoria                  │
+│  • Señal RF (barra visual)        │
+│  • Modal de detalle por clic      │
+│  • Exportación CSV                │
+│  • Calibración en vivo            │
+└───────────────────────────────────┘
 ```
 
 | Capa | Tecnología |
@@ -68,88 +70,63 @@ ESP32 (WiFi + BLE Scanner)
 | Escaneo WiFi | Modo station + promiscuo (canales 1-13) |
 | Escaneo BLE | NimBLE-Arduino (escaneo pasivo) |
 | Modelo de distancia | Log-Distance Path Loss |
-| Dashboard | Python 3.12 + CustomTkinter |
-| Base de datos OUI | Offline (~500 fabricantes) |
-| Comunicación | Serial (JSON asíncrono) |
-| Logging | CSV por sesión + log de eventos |
+| Servidor cloud | Python + FastAPI + uvicorn |
+| Dashboard web | HTML + CSS + JavaScript vanilla |
+| Comunicación ESP32→Server | WebSocket (JSON) |
+| Comunicación Server→Browser | WebSocket (JSON) |
+| OUI Lookup | API macvendors.com + caché local |
 
 ---
 
 ## Firmware ESP32
 
-El firmware implementa un escáner dual WiFi + BLE con clasificación en tiempo real:
+El firmware implementa un escáner dual WiFi + BLE que se conecta directamente al EC2 por WebSocket:
 
 | Componente | Descripción |
 |---|---|
 | WiFi Scan | Escaneo periódico de redes (canales 1-13), captura SSID, MAC, RSSI |
-| BLE Scan | Escaneo pasivo de dispositivos Bluetooth Low Energy |
+| BLE Scan | Escaneo pasivo con NimBLE |
 | Distancia estimada | Modelo Log-Distance Path Loss: `d = 10^((TxPower - RSSI) / (10 * n))` |
-| Clasificación | CRITICAL (< -50 dBm / < 2m), WARNING (< -70 dBm / < 5m), INFO |
-| Whitelist | Hasta 20 SSIDs WiFi + 20 MACs BLE (configurables desde dashboard) |
-| Heartbeat | Envío periódico de estado cada 5s |
-| Comunicación | JSON sobre Serial a 115200 baud |
+| Clasificación | CRITICAL, WARNING, INFO según RSSI/distancia |
+| Whitelist | Hasta 20 SSIDs WiFi + 20 MACs BLE |
+| Heartbeat | Envío periódico de estado cada 2s |
+| Comunicación | WebSocket JSON al servidor EC2 |
 
 ### Pines
 
 | Pin ESP32 | Función |
 |---|---|
 | GPIO 2 | LED de alerta |
-| GPIO 4 | LED de estado |
 | GPIO 26 | Buzzer |
 
 ---
 
-## Dashboard PC (Python)
+## Servidor Cloud (EC2)
 
-Tres versiones del dashboard con funcionalidad incremental:
+`aws/app.py` es un servidor FastAPI con WebSockets que corre en el puerto 8765:
 
-### v1 — Básico
-- UI oscura con CustomTkinter
-- Conexión serial (auto-detección de puerto)
-- Tabla de dispositivos con colores por nivel
-- Alertas sonoras (tonos sintéticos con pygame)
-- Panel de logs con exportación CSV
-- Configuración de modelo, thresholds y whitelist
-
-### v2 — Identificación de fabricantes
-- **OUI Lookup**: identifica el fabricante desde la MAC
-- **MAC aleatorias**: detecta MAC aleatorizadas (iOS 14+ / Android 10+)
-- **Redes ocultas**: detecta SSIDs reportados como `[Oculto]`
-- **Ventana de detalle**: doble clic en dispositivo para ver:
-  - Información del dispositivo
-  - Señal RF (gráfico de barras)
-  - Análisis de riesgo
-- **Perfil de riesgo**: HIGH / MEDIUM / LOW según fabricante
-
-### v3 — Detección de ISP/Hotspot
-- **Detección de ISP**: identifica SSID de operadores (Claro, Movistar, Entel, Bitel, Tigo, WOM, Izzi, Telmex, etc.)
-- **Detección de Hotspot personal**: iPhone/iPad, Samsung Galaxy, Xiaomi/Redmi/POCO, Huawei, Honor, Motorola, Google Pixel, OnePlus, LG, Tecno, Infinix, Oppo, Vivo, etc.
-- **Hotspot** se marca como **CRITICAL** (máxima alerta en contexto de examen)
-- **OUI de ISP** como respaldo cuando la MAC es conocida
+| Endpoint | Tipo | Descripción |
+|---|---|---|
+| `/esp32` | WebSocket | Conexión del ESP32 (o relay.py). Recibe SCAN_REPORT, HEARTBEAT |
+| `/ws` | WebSocket | Conexión del navegador. Recibe broadcast, envía comandos |
+| `/api/status` | GET | Estado del servidor (relay online, scan count, browsers) |
+| `/` | GET | Sirve emf.html (si se sirve desde el mismo puerto) |
 
 ---
 
-## Base de Datos OUI
+## Dashboard Web (emf.html)
 
-`oui_db.py` contiene una base de datos offline con más de **1500 OUIs** mapeados a fabricantes:
+Dashboard web auto-contenido con:
 
-| Fabricante | OUIs cubiertos |
-|---|---|
-| Apple | ~200 |
-| Samsung | ~150 |
-| Huawei | ~120 |
-| Xiaomi | ~32 |
-| Intel | ~130 |
-| Qualcomm/Atheros | ~80 |
-| Realtek | ~60 |
-| MediaTek | ~30 |
-| Espressif (ESP32) | ~15 |
-| Motorola, OnePlus, Google, Lenovo, Dell, HP, ASUS, etc. | Varios |
-
-Funciones principales:
-- `lookup_manufacturer(mac)` → `(fabricante, es_mac_aleatoria)`
-- `infer_from_ssid(ssid, fabricante)` → inferencia desde nombre de red
-- `get_device_risk_profile(mac, mac_aleatoria, tipo_señal)` → perfil de riesgo contextual
+- **Tabla de dispositivos** en tiempo real con colores por nivel de amenaza
+- **Leyenda**: Hotspot, Crítico, Aviso, MAC Random, ISP, Oculta, Auth
+- **Fabricante**: lookup local + API macvendors.com con caché
+- **Detección de ISP**: Claro, Movistar, Entel, Bitel, Tigo, WOM, etc.
+- **Detección de Hotspot personal**: iPhone, Samsung, Xiaomi, Huawei, etc.
+- **MAC aleatoria**: detecta MAC randomizadas (iOS 14+ / Android 10+)
+- **Modal de detalle** al hacer clic: información, señal RF, análisis contextual
+- **Exportación CSV** de todos los dispositivos detectados
+- **Configuración**: modelo, calibración y whitelist con tabs
 
 ---
 
@@ -157,49 +134,21 @@ Funciones principales:
 
 | Nivel | RSSI | Distancia | Color | Interpretación |
 |---|---|---|---|---|
-| **CRITICAL** | < -50 dBm | < 2 m | 🔴 Rojo | Dispositivo muy cercano — alta probabilidad de uso no autorizado |
-| **WARNING** | < -70 dBm | < 5 m | 🟡 Amarillo | Dispositivo cercano — posible riesgo |
-| **INFO** | ≥ -70 dBm | ≥ 5 m | 🟢 Verde/Info | Dispositivo lejano o de baja prioridad |
-| **WHITELIST** | — | — | ⚪ Blanco | Dispositivo en lista blanca (ignorado) |
-| **HOTSPOT** | — | — | 🔴 Rojo | Hotspot personal — máximo riesgo en examen |
-
----
-
-## Protocolo de Comunicación (Serial)
-
-### Mensajes ESP32 → PC
-
-| Tipo | Descripción |
-|---|---|
-| `BOOT` | Inicio del ESP32 con firmware versión |
-| `SCAN_REPORT` | Resultado de escaneo WiFi/BLE con lista de dispositivos |
-| `HEARTBEAT` | Estado periódico (cada 5s) |
-| `ACK` | Confirmación de comando recibido |
-| `CALIBRATION_RESULT` | Resultado de calibración de TxPower/n |
-| `STATUS` | Estado actual del sistema |
-
-### Comandos PC → ESP32
-
-| Comando | Descripción |
-|---|---|
-| `SET_MODEL` | Configurar TxPower y exponente `n` |
-| `SET_THRESHOLDS` | Configurar umbrales RSSI/distancia |
-| `ADD_WIFI_WL` | Agregar SSID a whitelist |
-| `ADD_BLE_WL` | Agregar MAC BLE a whitelist |
-| `CLEAR_WL` | Limpiar whitelist |
-| `CALIBRATE` | Iniciar calibración |
-| `GET_STATUS` | Solicitar estado actual |
+| **CRITICAL** | < -50 dBm | < 2 m | Rojo | Dispositivo muy cercano |
+| **WARNING** | < -70 dBm | < 5 m | Amarillo | Dispositivo cercano |
+| **INFO** | ≥ -70 dBm | ≥ 5 m | Verde | Dispositivo lejano |
+| **WHITELIST** | — | — | Blanco | Dispositivo autorizado |
+| **HOTSPOT** | — | — | Rojo intenso | Hotspot personal — máximo riesgo |
 
 ---
 
 ## Instalación y Uso
 
-### Firmware ESP32 (PlatformIO)
+### Firmware ESP32
 
 ```bash
-# Clonar repositorio y abrir en VS Code con PlatformIO
-git clone <repo-url>
-cd detector-electromagnetico
+# Abrir en VS Code con PlatformIO
+cd platformIO
 
 # Compilar y subir
 pio run --target upload
@@ -208,19 +157,29 @@ pio run --target upload
 pio device monitor --baud 115200
 ```
 
-### Dashboard PC
+Antes de subir, configurar WiFi y IP del EC2 en `src/main.cpp`:
+```cpp
+#define WIFI_SSID       "tu_red"
+#define WIFI_PASSWORD   "tu_password"
+#define EC2_HOST        "IP_DEL_EC2"
+#define EC2_PORT        8765
+```
+
+### Servidor EC2
 
 ```bash
-# Crear entorno virtual
-python -m venv venv
-source venv/bin/activate  # o venv\Scripts\activate en Windows
+# En la instancia EC2
+pip install fastapi uvicorn websockets
 
-# Instalar dependencias
-pip install customtkinter pyserial pygame Pillow
-
-# Ejecutar (última versión recomendada)
-python dashboard_v3.py
+# Ejecutar
+python aws/app.py
 ```
+
+El servidor corre en `0.0.0.0:8765`. El dashboard web (`aws/emf.html`) se puede servir con Apache, Nginx, o directamente desde FastAPI.
+
+### Dashboard Web
+
+Abrir `http://IP_DEL_EC2/emf.html` en el navegador. Se conecta automáticamente al WebSocket.
 
 ---
 
@@ -230,31 +189,17 @@ python dashboard_v3.py
 
 ```ini
 lib_deps =
-    bblanchon/ArduinoJson @ ^7.4.3
-    h2zero/NimBLE-Arduino
+    bblanchon/ArduinoJson @ ^7.0.0
+    links2004/WebSockets @ ^2.4.0
+    h2zero/NimBLE-Arduino @ ^1.4.0
 ```
 
-### Dashboard (Python)
+### Servidor EC2
 
 ```
-customtkinter >= 5.2.0
-pyserial >= 3.5
-pygame >= 2.5
-Pillow >= 10.0
-```
-
----
-
-## Comandos Útiles
-
-```bash
-# Monitor serial directo
-pio device monitor --baud 115200
-
-# Logs de escaneo (últimas detecciones)
-tail -f logs_emf/scan_$(date +%Y%m%d)*.csv
-
-# Exportar CSV manualmente (desde dashboard: botón Export)
+fastapi >= 0.100.0
+uvicorn >= 0.23.0
+websockets >= 11.0
 ```
 
 ---
@@ -262,29 +207,25 @@ tail -f logs_emf/scan_$(date +%Y%m%d)*.csv
 ## Características
 
 - Escaneo simultáneo WiFi + BLE desde un solo ESP32
-- Modelo Log-Distance Path Loss con TxPower y exponente `n` configurables
+- Comunicación directa por WebSocket al servidor EC2
+- Modelo Log-Distance Path Loss configurable
 - Clasificación CRITICAL / WARNING / INFO con umbrales ajustables
-- Whitelist de hasta 20 SSIDs + 20 MACs
-- Dashboard con tabla en tiempo real, alertas sonoras y visuales
-- Identificación de fabricante por OUI (~1500 entradas)
+- Dashboard web responsive con conexión en tiempo real
+- Identificación de fabricante por OUI (API + caché local)
 - Detección de MAC aleatorizadas (iOS 14+ / Android 10+)
-- Detección de redes ocultas
 - Detección de ISP y Hotspot personal para contexto de examen
-- Perfil de riesgo contextual (HIGH / MEDIUM / LOW)
-- Exportación CSV por sesión
-- Ventana de detalle con análisis de señal y riesgo
-- Filtro por nivel de amenaza en tabla
+- Modal de detalle con análisis de señal y riesgo contextual
+- Exportación CSV desde el navegador
+- Whitelist de hasta 20 SSIDs + 20 MACs
 
 ---
 
 ## Limitaciones y Pendientes
 
-- Comunicación por Serial (no WiFi/remoto)
+- Dependencia de conexión WiFi para el ESP32
 - Sin almacenamiento persistente en el ESP32
-- Rango limitado del escaneo BLE (~10 m en interiores)
-- Sin autenticación ni cifrado
-- Sin historial persistente en dashboard (solo CSV)
-- Sin app móvil (por ahora solo dashboard PC)
+- Sin autenticación ni cifrado WSS (WebSocket Secure)
+- Sin historial persistente en el servidor (solo JSONL por sesión)
+- Sin app móvil
 - Sin soporte multi-ESP32
-- Sin integración cloud (pendiente para AWS)
-- Sin HTTPS ni API REST (planeado para versión cloud)
+- Sin HTTPS (pendiente configurar con certbot/nginx)

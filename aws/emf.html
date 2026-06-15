@@ -1,0 +1,1047 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMF DETECTOR — Dashboard</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:        #0D1117;
+    --surface:   #161B22;
+    --surface2:  #1C2128;
+    --border:    #30363D;
+    --text:      #E6EDF3;
+    --muted:     #8B949E;
+    --critical:  #FF4444;
+    --warning:   #FFA500;
+    --info:      #3FB950;
+    --accent:    #58A6FF;
+    --whitelist: #7C8CF8;
+    --random:    #FF6B9D;
+    --hidden:    #C9A227;
+    --hotspot:   #FF3E3E;
+    --isp:       #4FC3F7;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  code, .mono { font-family: 'Courier New', monospace; }
+
+  /* ── Header ── */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-logo { font-size: 20px; font-weight: 800; color: var(--accent); font-family: 'Courier New', monospace; letter-spacing: 2px; }
+  .header-sub  { color: var(--muted); font-size: 12px; flex: 1; }
+  .conn-badge  { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+  .conn-badge.online  { background: #0d2a1a; color: var(--info); border: 1px solid var(--info); }
+  .conn-badge.offline { background: #2a0d0d; color: var(--critical); border: 1px solid var(--critical); }
+  .conn-badge.connecting { background: #1a1a0d; color: var(--warning); border: 1px solid var(--warning); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+  /* ── Layout ── */
+  .body { display: grid; grid-template-columns: 1fr 380px; gap: 12px; padding: 12px; height: calc(100vh - 58px); }
+  .left  { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .right { display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow-y: auto; }
+
+  /* ── Metric Cards ── */
+  .metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .card-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .card-value { font-size: 24px; font-weight: 800; font-family: 'Courier New', monospace; }
+
+  /* ── Panel ── */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 10px 14px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .panel-title { font-size: 12px; font-weight: 700; color: var(--text); flex: 1; }
+  .panel-body  { flex: 1; overflow: auto; }
+
+  /* ── Table ── */
+  .legend { display: flex; gap: 10px; flex-wrap: wrap; }
+  .legend-item { font-size: 10px; display: flex; align-items: center; gap: 4px; }
+
+  .dev-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  .dev-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .dev-table td { padding: 7px 10px; border-bottom: 1px solid #1e2428; white-space: nowrap; }
+  .dev-table tr:hover td { background: #1a2030; cursor: pointer; }
+  .dev-table tr.level-CRITICAL td { color: var(--critical); }
+  .dev-table tr.level-WARNING  td { color: var(--warning); }
+  .dev-table tr.level-INFO     td { color: var(--info); }
+  .dev-table tr.level-WHITELIST td { color: var(--whitelist); }
+  .dev-table tr.level-RANDOM   td { color: var(--random); }
+  .dev-table tr.level-HIDDEN   td { color: var(--hidden); }
+  .dev-table tr.level-HOTSPOT  td { color: var(--hotspot); font-weight: 700; }
+  .dev-table tr.level-ISP      td { color: var(--isp); }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .badge-critical  { background:#3a0a0a; color:var(--critical); border:1px solid var(--critical); }
+  .badge-warning   { background:#3a2500; color:var(--warning);  border:1px solid var(--warning); }
+  .badge-info      { background:#0a2a14; color:var(--info);     border:1px solid var(--info); }
+  .badge-hotspot   { background:#3a0505; color:var(--hotspot);  border:1px solid var(--hotspot); }
+  .badge-isp       { background:#062030; color:var(--isp);      border:1px solid var(--isp); }
+  .badge-random    { background:#2a0a1a; color:var(--random);   border:1px solid var(--random); }
+  .badge-hidden    { background:#2a1e00; color:var(--hidden);   border:1px solid var(--hidden); }
+  .badge-wl        { background:#0d1040; color:var(--whitelist);border:1px solid var(--whitelist); }
+  .badge-personal  { background:#1a1a2e; color:#A9C9FF; border:1px solid #4a6fa5; }
+  .badge-computer  { background:#1a2a1a; color:#6FCF97; border:1px solid #2e8b57; }
+  .badge-mobile    { background:#2a1a2a; color:#D7BDE2; border:1px solid #9b59b6; }
+
+  /* ── Log ── */
+  .log-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .log-CRITICAL { color: var(--critical); }
+  .log-WARNING  { color: var(--warning); }
+  .log-INFO     { color: var(--info); }
+  .log-HOTSPOT  { color: var(--hotspot); font-weight: 700; }
+
+  /* ── Controles ── */
+  .tabs { display: flex; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .tab {
+    padding: 8px 14px;
+    font-size: 11px;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-content { display: none; padding: 12px; }
+  .tab-content.active { display: block; }
+
+  .form-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .form-label { font-size: 11px; color: var(--muted); width: 140px; flex-shrink: 0; }
+  .form-input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    width: 90px;
+    font-family: 'Courier New', monospace;
+  }
+  .form-input:focus { outline: none; border-color: var(--accent); }
+  .btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+  .btn:hover { opacity: .85; }
+  .btn-accent  { background: var(--accent);   color: #000; }
+  .btn-green   { background: #238636;          color: #fff; }
+  .btn-red     { background: var(--critical);  color: #fff; }
+  .btn-gray    { background: var(--border);    color: var(--text); }
+  .btn-full    { width: 100%; margin-top: 6px; }
+
+  /* ── Modal detalle ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 540px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-header {
+    padding: 16px 20px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal-title { font-size: 15px; font-weight: 700; }
+  .modal-close { background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; }
+  .modal-body  { padding: 16px 20px; }
+  .detail-section { margin-bottom: 16px; }
+  .detail-section h4 { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+  .detail-row { display: flex; gap: 12px; padding: 4px 0; font-size: 12px; }
+  .detail-key  { color: var(--muted); width: 140px; flex-shrink: 0; }
+  .detail-val  { color: var(--text); font-family: 'Courier New', monospace; flex: 1; word-break: break-all; }
+  .signal-bar-wrap { background: var(--surface2); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+  .signal-bar-track { background: var(--border); border-radius: 4px; height: 14px; overflow: hidden; margin: 8px 0 4px; }
+  .signal-bar-fill  { height: 100%; border-radius: 4px; transition: width .5s; }
+  .signal-labels { display: flex; justify-content: space-between; font-size: 9px; color: var(--muted); }
+  .alert-box { border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-size: 11px; line-height: 1.6; }
+  .alert-critical { background: #3a0a0a; border: 1px solid var(--critical); color: var(--critical); }
+  .alert-warning  { background: #3a2500; border: 1px solid var(--warning);  color: var(--warning); }
+  .alert-info     { background: #0a2a14; border: 1px solid var(--info);     color: var(--info); }
+  .alert-hotspot  { background: #3a0505; border: 1px solid var(--hotspot);  color: var(--hotspot); }
+
+  /* ── Scroll ── */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .body { grid-template-columns: 1fr; }
+    .right { max-height: 50vh; }
+    .metrics { grid-template-columns: repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="header">
+  <div class="header-logo">⚡ EMF DETECTOR</div>
+  <div class="header-sub">Sistema de detección para concursos de admisión</div>
+  <div class="conn-badge connecting" id="esp32Badge">
+    <div class="dot"></div>
+    <span id="esp32Status">Conectando...</span>
+  </div>
+  <div class="conn-badge connecting" id="serverBadge">
+    <div class="dot"></div>
+    <span id="serverStatus">Servidor...</span>
+  </div>
+</div>
+
+<!-- ── BODY ── -->
+<div class="body">
+
+  <!-- ── IZQUIERDA ── -->
+  <div class="left">
+
+    <!-- Métricas -->
+    <div class="metrics">
+      <div class="card">
+        <div class="card-label">Estado</div>
+        <div class="card-value" id="mEstado" style="font-size:16px;margin-top:4px;color:var(--muted)">IDLE</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Críticos</div>
+        <div class="card-value" id="mCrit" style="color:var(--critical)">0</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Advertencias</div>
+        <div class="card-value" id="mWarn" style="color:var(--warning)">0</div>
+      </div>
+      <div class="card">
+        <div class="card-label">MAC Random</div>
+        <div class="card-value" id="mRand" style="color:var(--random)">0</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Hotspots</div>
+        <div class="card-value" id="mHot" style="color:var(--hotspot)">0</div>
+      </div>
+    </div>
+
+    <!-- Tabla dispositivos -->
+    <div class="panel" style="flex:1">
+      <div class="panel-header">
+        <span class="panel-title">📡 DISPOSITIVOS DETECTADOS</span>
+        <div class="legend">
+          <span class="legend-item"><span style="color:var(--hotspot)">●</span> Hotspot</span>
+          <span class="legend-item"><span style="color:var(--critical)">●</span> Crítico</span>
+          <span class="legend-item"><span style="color:var(--warning)">●</span> Aviso</span>
+          <span class="legend-item"><span style="color:var(--random)">●</span> MAC Rand</span>
+          <span class="legend-item"><span style="color:var(--isp)">●</span> ISP</span>
+          <span class="legend-item"><span style="color:var(--hidden)">●</span> Oculta</span>
+          <span class="legend-item"><span style="color:var(--whitelist)">●</span> Auth</span>
+        </div>
+        <button class="btn btn-gray" onclick="exportCSV()" style="font-size:10px;padding:4px 10px">Exportar CSV</button>
+      </div>
+      <div class="panel-body">
+        <table class="dev-table">
+          <thead>
+            <tr>
+              <th>TIPO</th>
+              <th>SSID / NOMBRE</th>
+              <th>FABRICANTE</th>
+              <th>ISP / HOTSPOT</th>
+              <th>MAC</th>
+              <th>RSSI</th>
+              <th>DIST(m)</th>
+              <th>CANAL</th>
+              <th>NIVEL</th>
+              <th>FLAGS</th>
+            </tr>
+          </thead>
+          <tbody id="devTable">
+            <tr><td colspan="10" style="text-align:center;color:var(--muted);padding:30px">Esperando datos del ESP32...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="padding:6px 14px;font-size:10px;color:var(--muted);border-top:1px solid var(--border)">
+        💡 Clic en una fila para ver análisis detallado &nbsp;|&nbsp; Último escaneo: <span id="lastScanTime">—</span> &nbsp;|&nbsp; Total escaneos: <span id="scanCount">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DERECHA ── -->
+  <div class="right">
+
+    <!-- Log -->
+    <div class="panel" style="flex:1;min-height:250px">
+      <div class="panel-header">
+        <span class="panel-title">📋 LOG DE EVENTOS</span>
+        <button class="btn btn-gray" onclick="clearLog()" style="font-size:10px;padding:3px 8px">Limpiar</button>
+      </div>
+      <div class="log-box" id="logBox"></div>
+    </div>
+
+    <!-- Controles -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">⚙️ CONFIGURACIÓN</span>
+      </div>
+      <div class="tabs">
+        <div class="tab active" onclick="showTab('modelo')">Modelo</div>
+        <div class="tab" onclick="showTab('calibrar')">Calibrar</div>
+        <div class="tab" onclick="showTab('whitelist')">Whitelist</div>
+      </div>
+
+      <!-- Tab Modelo -->
+      <div class="tab-content active" id="tab-modelo">
+        <div class="form-row"><span class="form-label">TxPower WiFi (dBm)</span><input class="form-input" id="txpWifi" value="-59"></div>
+        <div class="form-row"><span class="form-label">TxPower BLE (dBm)</span><input class="form-input" id="txpBle" value="-59"></div>
+        <div class="form-row"><span class="form-label">Exp. trayectoria n</span><input class="form-input" id="nFactor" value="2.7"></div>
+        <div class="form-row"><span class="form-label">RSSI Crítico (dBm)</span><input class="form-input" id="rssiCrit" value="-50"></div>
+        <div class="form-row"><span class="form-label">RSSI Aviso (dBm)</span><input class="form-input" id="rssiWarn" value="-70"></div>
+        <button class="btn btn-accent btn-full" onclick="sendModel()">Aplicar al ESP32</button>
+      </div>
+
+      <!-- Tab Calibrar -->
+      <div class="tab-content" id="tab-calibrar">
+        <p style="font-size:10px;color:var(--muted);margin-bottom:10px">Pon un dispositivo a distancia conocida, mide el RSSI promedio y calibra el modelo.</p>
+        <div class="form-row"><span class="form-label">Distancia (m)</span><input class="form-input" id="calDist" value="1.0"></div>
+        <div class="form-row"><span class="form-label">RSSI medido (dBm)</span><input class="form-input" id="calRssi" value="-59"></div>
+        <div class="form-row">
+          <span class="form-label">Tipo de señal</span>
+          <select class="form-input" id="calType" style="width:90px">
+            <option>WIFI</option>
+            <option>BLE</option>
+          </select>
+        </div>
+        <button class="btn btn-green btn-full" onclick="sendCalibration()">Calibrar ESP32</button>
+        <div id="calResult" style="font-size:10px;color:var(--info);margin-top:8px;text-align:center"></div>
+      </div>
+
+      <!-- Tab Whitelist -->
+      <div class="tab-content" id="tab-whitelist">
+        <p style="font-size:10px;color:var(--muted);margin-bottom:8px">Redes y dispositivos autorizados (no generan alertas).</p>
+        <div class="form-row">
+          <input class="form-input" id="wlSsid" placeholder="SSID WiFi" style="width:160px">
+          <button class="btn btn-green" onclick="addWifiWL()">+ WiFi</button>
+        </div>
+        <div class="form-row">
+          <input class="form-input" id="wlMac" placeholder="aa:bb:cc:dd:ee:ff" style="width:160px">
+          <button class="btn btn-green" onclick="addBleWL()">+ BLE</button>
+        </div>
+        <button class="btn btn-red btn-full" onclick="clearWL()">Limpiar toda la whitelist</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── MODAL DETALLE ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header" id="modalHeader">
+      <span class="modal-title" id="modalTitle">Detalle del Dispositivo</span>
+      <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+// ──────────────────────────────────────────────
+//  OUI DATABASE — caché local + API en tiempo real
+// ──────────────────────────────────────────────
+
+// Caché local con los más comunes en Perú y globales
+const OUI_MAP = {
+  // Apple
+  "A4:B8:05":"Apple","DC:2B:2A":"Apple","F0:18:98":"Apple",
+  "E4:4C:C7":"Apple","B8:17:C2":"Apple","AC:BC:32":"Apple",
+  "F4:F1:5A":"Apple","88:66:A5":"Apple","3C:22:FB":"Apple",
+  "00:17:F2":"Apple","4C:57:CA":"Apple","70:CD:60":"Apple",
+  // Samsung
+  "B0:D0:9C":"Samsung","A8:7D:12":"Samsung","E8:03:9A":"Samsung",
+  "F4:42:8F":"Samsung","50:01:BB":"Samsung","8C:71:F8":"Samsung",
+  "CC:07:AB":"Samsung","78:25:AD":"Samsung","BC:20:A4":"Samsung",
+  // Xiaomi
+  "3C:BD:D8":"Xiaomi","34:80:B3":"Xiaomi","68:DF:DD":"Xiaomi",
+  "9C:99:A0":"Xiaomi","50:64:2B":"Xiaomi","F8:A4:5F":"Xiaomi",
+  "AC:C1:EE":"Xiaomi","28:6C:07":"Xiaomi","64:B4:73":"Xiaomi",
+  // Huawei
+  "14:B9:68":"Huawei","04:02:1F":"Huawei","54:89:98":"Huawei",
+  "28:6E:D4":"Huawei","48:46:FB":"Huawei","AC:4E:91":"Huawei",
+  "C8:14:79":"Huawei","2C:AB:00":"Huawei","F4:CB:52":"Huawei",
+  // Intel (laptops)
+  "10:02:B5":"Intel","28:D2:44":"Intel","3C:A9:F4":"Intel",
+  "A0:A8:CD":"Intel","8C:8D:28":"Intel","34:02:86":"Intel",
+  "54:27:1E":"Intel","AC:37:43":"Intel","B8:08:CF":"Intel",
+  // TP-Link
+  "00:14:78":"TP-Link","50:C7:BF":"TP-Link","18:D6:C7":"TP-Link",
+  "6C:11:BA":"TP-Link","E8:4D:74":"TP-Link","D4:01:45":"TP-Link",
+  "08:33:ED":"TP-Link","EC:17:2F":"TP-Link","74:EA:3A":"TP-Link",
+  "AC:84:C6":"TP-Link","68:FF:7B":"TP-Link","14:CC:20":"TP-Link",
+  "C4:E9:84":"TP-Link","60:E3:27":"TP-Link","B0:4E:26":"TP-Link",
+  // Movistar / Telefónica (routers)
+  "D8:9A:0D":"Sercomm (Movistar)","18:6F:3C":"Sercomm (Movistar)",
+  "00:09:45":"Sercomm","00:E0:4C":"Realtek",
+  // Espressif (ESP32)
+  "24:0A:C4":"Espressif","24:6F:28":"Espressif","30:AE:A4":"Espressif",
+  "A4:CF:12":"Espressif","84:CC:A8":"Espressif","CC:50:E3":"Espressif",
+  // Raspberry Pi
+  "B8:27:EB":"Raspberry Pi","DC:A6:32":"Raspberry Pi","E4:5F:01":"Raspberry Pi",
+  // Motorola
+  "6C:40:08":"Motorola","40:6C:8F":"Motorola","CC:32:E5":"Motorola",
+  // Google / Pixel
+  "F4:F5:DB":"Google","54:60:09":"Google","3C:5A:B4":"Google",
+  // Oppo / Realme
+  "00:1A:7D":"Oppo","FC:E7:E9":"Oppo","A0:C5:89":"Oppo",
+  // Vivo
+  "5C:E8:EB":"Vivo","0C:D1:C2":"Vivo","40:B8:37":"Vivo",
+  // Lenovo
+  "54:05:DB":"Lenovo","C4:69:F0":"Lenovo","E8:6F:38":"Lenovo",
+  // Dell
+  "00:22:19":"Dell","18:03:73":"Dell","54:9F:35":"Dell",
+  // HP
+  "00:1B:78":"HP","1C:C1:DE":"HP","40:B0:34":"HP",
+};
+
+// Caché de consultas a la API
+const ouiApiCache = {};
+const ouiPending  = {};
+
+async function fetchManufacturerApi(mac) {
+  const oui = mac.toUpperCase().substring(0,8);
+  if (ouiApiCache[oui]) return ouiApiCache[oui];
+  if (ouiPending[oui])  return null;
+  ouiPending[oui] = true;
+  try {
+    const res  = await fetch(`https://api.macvendors.com/${encodeURIComponent(oui)}`);
+    if (res.ok) {
+      const vendor = await res.text();
+      ouiApiCache[oui] = vendor.trim();
+      return ouiApiCache[oui];
+    }
+  } catch(e) { /* sin internet */ }
+  ouiApiCache[oui] = null;
+  return null;
+}
+
+function isMacRandom(mac) {
+  if (!mac) return false;
+  try { return (parseInt(mac.split(':')[0],16) & 0x02) !== 0; }
+  catch { return false; }
+}
+
+function lookupOUI(mac) {
+  if (!mac) return "Desconocido";
+  if (isMacRandom(mac)) return "MAC Aleatoria";
+  const oui = mac.toUpperCase().substring(0,8);
+  return OUI_MAP[oui] || null;
+}
+
+// Patrones hotspot / ISP
+const HOTSPOT_PATTERNS = [
+  [/^iphone\s*(de\s*)?\w*/i, "📱 Hotspot iPhone"],
+  [/^ipad\s*(de\s*)?\w*/i,   "📱 Hotspot iPad"],
+  [/androidap/i,             "📱 Hotspot Android"],
+  [/android\s*ap/i,          "📱 Hotspot Android"],
+  [/^galaxy\s+\w+/i,         "📱 Hotspot Samsung Galaxy"],
+  [/^redmi\s+\w+/i,          "📱 Hotspot Xiaomi Redmi"],
+  [/^xiaomi\s+\w+/i,         "📱 Hotspot Xiaomi"],
+  [/^poco\s+\w+/i,           "📱 Hotspot POCO"],
+  [/^huawei\s+\w+/i,         "📱 Hotspot Huawei"],
+  [/^moto\s*\w+/i,           "📱 Hotspot Motorola"],
+  [/^pixel\s+\w+/i,          "📱 Hotspot Pixel"],
+  [/^hotspot\s+de\s+\w+/i,   "💻 Hotspot Windows/Android"],
+  [/^DIRECT-\w+/,            "📱 Wi-Fi Direct"],
+  [/^(cel|celu)[-_\s]?\w*/i, "📱 Probable hotspot celular"],
+  [/^zona\s+wi.?fi/i,        "📱 Hotspot personal"],
+  [/^Mi\s+[\w\d]+/i,         "📱 Hotspot Xiaomi"],
+  [/^Redmi\s+/i,             "📱 Hotspot Redmi"],
+  [/^POCO\s+/i,              "📱 Hotspot POCO"],
+  [/^OnePlus\s+/i,           "📱 Hotspot OnePlus"],
+  [/^Realme\s+/i,            "📱 Hotspot Realme"],
+  [/^OPPO\s+/i,              "📱 Hotspot OPPO"],
+  [/^vivo\s+/i,              "📱 Hotspot vivo"],
+  [/^SM-[A-Z0-9]+/i,         "📱 Hotspot Samsung"],
+];
+
+const ISP_PATTERNS = [
+  [/claro[-_\s]?\w*/i,       "🌐 Claro"],
+  [/movistar[-_\s]?\w*/i,    "🌐 Movistar"],
+  [/entel[-_\s]?\w*/i,       "🌐 Entel"],
+  [/bitel[-_\s]?\w*/i,       "🌐 Bitel"],
+  [/tigo[-_\s]?\w*/i,        "🌐 Tigo"],
+  [/wom[-_\s]?\w*/i,         "🌐 WOM"],
+  [/telmex[-_\s]?\w*/i,      "🌐 Telmex"],
+  [/directv/i,               "🌐 DirecTV"],
+  [/wi[-\s]?fi[-\s]?\w*/i,   "🌐 WiFi Público"],
+  [/fiber[-_\s]?\w*/i,       "🌐 Fibertel"],
+  [/personal[-_\s]?\w*/i,    "🌐 Personal"],
+];
+
+// Función mejorada para analizar SSID - SIEMPRE devuelve algo útil
+function analyzeSsid(ssid) {
+  if (!ssid || ssid === "" || ["[oculto]","[hidden]","hidden","(oculto)"].includes(ssid.toLowerCase()))
+    return {isHotspot: false, isIsp: false, label: "🔒 Red Oculta", icon: "🔒", type: "hidden"};
+  
+  // Verificar si es hotspot
+  for (const [pat, label] of HOTSPOT_PATTERNS) {
+    if (pat.test(ssid)) {
+      return {isHotspot: true, isIsp: false, label: label, icon: "🔥", type: "hotspot"};
+    }
+  }
+  
+  // Verificar si es ISP
+  for (const [pat, label] of ISP_PATTERNS) {
+    if (pat.test(ssid)) {
+      return {isHotspot: false, isIsp: true, label: label, icon: "🌐", type: "isp"};
+    }
+  }
+  
+  // Análisis inteligente para nombres personales/comunes
+  let label = "📶 WiFi";
+  let icon = "📶";
+  let type = "normal";
+  
+  // Nombres de personas (ej: "WILLIANS", "MARIANA", "JOSE", "ANA")
+  if (/^[A-Z]{4,}$/i.test(ssid.trim()) || /^[A-Za-záéíóúñ]{4,}$/i.test(ssid)) {
+    label = "👤 Nombre personal";
+    icon = "👤";
+    type = "personal";
+  }
+  // Nombres con números al final (ej: "YURICO 60", "JUAN 123")
+  else if (/^[A-Za-záéíóúñ]+\s+\d+$/i.test(ssid)) {
+    label = "👤 Nombre + número";
+    icon = "👤";
+    type = "personal";
+  }
+  // Computadoras (W10, W11, PC, LAPTOP, DESKTOP)
+  else if (/^(W10|W11|PC|LAPTOP|DESKTOP|NOTEBOOK|COMPUTADORA)/i.test(ssid)) {
+    label = "💻 Computadora";
+    icon = "💻";
+    type = "computer";
+  }
+  // Marcas de celulares (no hotspot)
+  else if (/^(Redmi|Xiaomi|Samsung|Huawei|Moto|Motorola|Pixel|OnePlus|Realme|OPPO|vivo)/i.test(ssid)) {
+    label = "📱 Dispositivo móvil";
+    icon = "📱";
+    type = "mobile";
+  }
+  // Nombres cortos (3-8 letras mayúsculas)
+  else if (ssid.length <= 10 && /^[A-Z]{3,8}$/.test(ssid)) {
+    label = "🏠 Red doméstica";
+    icon = "🏠";
+    type = "home";
+  }
+  // Nombres con formato de router por defecto
+  else if (/^[A-Z]{3,6}_[A-Z0-9]{4,}$/i.test(ssid)) {
+    label = "📡 Router WiFi";
+    icon = "📡";
+    type = "router";
+  }
+  
+  return {isHotspot: false, isIsp: false, label: label, icon: icon, type: type};
+}
+
+function enrichDevice(d, idx) {
+  d.mac_random   = isMacRandom(d.mac);
+  d.hidden       = !d.ssid || d.ssid === "" || ["[oculto]","[hidden]"].includes((d.ssid||"").toLowerCase());
+  const si       = analyzeSsid(d.ssid);
+  d.is_hotspot   = si.isHotspot;
+  d.is_isp       = si.isIsp;
+  d.ssid_label   = si.label;
+  d.ssid_icon    = si.icon || "📶";
+  d.ssid_type    = si.type || "normal";
+
+  // Fabricante: caché local primero, luego API
+  const local = lookupOUI(d.mac);
+  if (local && local !== "Desconocido") {
+    d.manufacturer = local;
+  } else if (local === null && !d.mac_random) {
+    d.manufacturer = "Consultando...";
+    if (idx !== undefined) {
+      fetchAndUpdateManufacturer(d.mac, idx);
+    }
+  } else {
+    d.manufacturer = "Desconocido";
+  }
+  return d;
+}
+
+async function fetchAndUpdateManufacturer(mac, idx) {
+  const vendor = await fetchManufacturerApi(mac);
+  if (vendor && allDevices[idx]) {
+    allDevices[idx].manufacturer = vendor;
+    const rows = document.querySelectorAll("#devTable tr");
+    if (rows[idx]) {
+      const cells = rows[idx].querySelectorAll("td");
+      if (cells[2]) cells[2].textContent = vendor.substring(0,14);
+    }
+  }
+}
+
+// ──────────────────────────────────────────────
+//  WEBSOCKET
+// ──────────────────────────────────────────────
+let ws = null, scanCount = 0, allDevices = [], logLines = [];
+
+function connect() {
+  const wsUrl = `ws://${window.location.hostname}:8765/ws`;
+  
+  updateBadge("serverBadge","serverStatus","connecting","Conectando...");
+
+  ws = new WebSocket(wsUrl);
+
+  ws.onopen = () => {
+    updateBadge("serverBadge","serverStatus","online","Servidor OK");
+    addLog("Conectado al servidor EC2", "INFO");
+  };
+
+  ws.onclose = () => {
+    updateBadge("serverBadge","serverStatus","connecting","Reconectando...");
+    updateBadge("esp32Badge","esp32Status","offline","Relay offline");
+    addLog("Desconectado del servidor. Reintentando en 3s...", "WARNING");
+    setTimeout(connect, 3000);
+  };
+
+  ws.onerror = () => {
+    updateBadge("serverBadge","serverStatus","offline","Error conexión");
+  };
+
+  ws.onmessage = (ev) => {
+    try { handleMessage(JSON.parse(ev.data)); }
+    catch(e) { console.error("Parse error:", e); }
+  };
+}
+
+function handleMessage(data) {
+  switch(data.type) {
+    case "SERVER_HELLO":
+      if (data.relay_online)
+        updateBadge("esp32Badge","esp32Status","online","Relay online");
+      else
+        updateBadge("esp32Badge","esp32Status","offline","Relay offline");
+      if (data.last_scan && data.last_scan.devices)
+        renderScan(data.last_scan);
+      break;
+
+    case "RELAY_STATUS":
+      if (data.online) {
+        updateBadge("esp32Badge","esp32Status","online","Relay online");
+        addLog("Relay (PC+ESP32) conectado", "INFO");
+      } else {
+        updateBadge("esp32Badge","esp32Status","offline","Relay offline");
+        addLog("Relay desconectado", "WARNING");
+      }
+      break;
+
+    case "SCAN_REPORT":
+      scanCount++;
+      document.getElementById("scanCount").textContent = scanCount;
+      document.getElementById("lastScanTime").textContent = new Date().toLocaleTimeString();
+      renderScan(data);
+      break;
+
+    case "HEARTBEAT":
+      const heap = data.heap ? `${Math.round(data.heap/1024)}KB` : "?";
+      const wrssi = data.wifi_rssi || "?";
+      document.getElementById("lastScanTime").title = `ESP32 heap: ${heap} | WiFi RSSI: ${wrssi}dBm`;
+      break;
+
+    case "CALIBRATION_RESULT":
+      document.getElementById("calResult").textContent = `✓ TxPower=${data.new_txPower?.toFixed(1)} dBm | RSSI@1m≈${data.rssi_at_1m} dBm`;
+      addLog(`Calibración OK: TxPower=${data.new_txPower?.toFixed(1)}dBm`, "INFO");
+      break;
+
+    case "ACK":
+      addLog(`ACK [${data.cmd}]: ${data.msg||""}`, data.ok?"INFO":"WARNING");
+      break;
+
+    case "ERROR":
+      addLog(`Error: ${data.msg}`, "WARNING");
+      break;
+  }
+}
+
+// ──────────────────────────────────────────────
+//  RENDER SCAN (CORREGIDO - SIEMPRE MUESTRA ALGO)
+// ──────────────────────────────────────────────
+function renderScan(data) {
+  const devices = (data.devices || []).map((d,i) => enrichDevice(d, i));
+  allDevices = devices;
+
+  const nonWl = devices.filter(d => !d.whitelisted);
+  const crit  = nonWl.filter(d => d.level === "CRITICAL");
+  const warn  = nonWl.filter(d => d.level === "WARNING");
+  const rands = nonWl.filter(d => d.mac_random);
+  const hots  = nonWl.filter(d => d.is_hotspot);
+
+  // Métricas
+  const estado = crit.length?"CRÍTICO":warn.length?"AVISO":"NORMAL";
+  const ecolor = crit.length?"var(--critical)":warn.length?"var(--warning)":"var(--info)";
+  document.getElementById("mEstado").textContent  = estado;
+  document.getElementById("mEstado").style.color  = ecolor;
+  document.getElementById("mCrit").textContent    = crit.length;
+  document.getElementById("mWarn").textContent    = warn.length;
+  document.getElementById("mRand").textContent    = rands.length;
+  document.getElementById("mHot").textContent     = hots.length;
+
+  // Log automático
+  if (crit.length)
+    addLog(`🚨 CRÍTICO: ${crit.length} dispositivo(s) muy cerca!`, "CRITICAL");
+  else if (warn.length)
+    addLog(`⚠ AVISO: ${warn.length} dispositivo(s) en rango.`, "WARNING");
+  if (hots.length)
+    addLog(`🔥 ${hots.length} HOTSPOT(S) PERSONAL(ES) detectado(s)!`, "HOTSPOT");
+  if (rands.length)
+    addLog(`🔵 ${rands.length} dispositivo(s) con MAC aleatoria.`, "WARNING");
+
+  // Ordenar
+  const order = {CRITICAL:0,WARNING:1,INFO:2};
+  devices.sort((a,b) => {
+    if (a.whitelisted !== b.whitelisted) return a.whitelisted?1:-1;
+    if (a.is_hotspot  !== b.is_hotspot)  return a.is_hotspot?-1:1;
+    return (order[a.level]??2)-(order[b.level]??2);
+  });
+
+  // Tabla
+  const tbody = document.getElementById("devTable");
+  if (!devices.length) {
+    tbody.innerHTML = `<tr><td colspan="10" style="text-align:center;color:var(--muted);padding:20px">Sin dispositivos detectados</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = devices.map((d,i) => {
+    const wl      = d.whitelisted;
+    const isRand  = d.mac_random;
+    const isHid   = d.hidden;
+    const isHot   = d.is_hotspot;
+    const isIsp   = d.is_isp;
+    const level   = d.level || "INFO";
+
+    let rowClass = "level-";
+    if      (wl)     rowClass += "WHITELIST";
+    else if (isHot)  rowClass += "HOTSPOT";
+    else if (isRand) rowClass += "RANDOM";
+    else if (isHid)  rowClass += "HIDDEN";
+    else if (isIsp)  rowClass += "ISP";
+    else             rowClass += level;
+
+    const mfr  = (d.manufacturer||"Desconocido").substring(0,14);
+    const ssid = (d.ssid && d.ssid !== "") ? d.ssid.substring(0,20) : "[Oculto]";
+    const dist = isNaN(parseFloat(d.distance))?"?":parseFloat(d.distance).toFixed(1);
+    const ch   = d.channel || "—";
+
+    // 🔥 CORRECCIÓN PRINCIPAL: SIEMPRE mostrar algo en ISP/HOTSPOT
+    let ispBadge = "";
+    if (isHot) {
+      ispBadge = `<span class="badge badge-hotspot" title="Hotspot personal detectado - ¡ALTA SOSPECHA!">${d.ssid_label || "🔥 HOTSPOT"}</span>`;
+    } else if (isIsp) {
+      ispBadge = `<span class="badge badge-isp" title="Red de operador ISP - riesgo bajo">${d.ssid_label || "🌐 ISP"}</span>`;
+    } else if (d.hidden) {
+      ispBadge = `<span class="badge badge-hidden" title="Red oculta - puede ser sospechosa">🔒 Red Oculta</span>`;
+    } else if (d.mac_random && d.ssid_type === "personal") {
+      ispBadge = `<span class="badge badge-random" title="MAC aleatoria + nombre personal = muy sospechoso">📱 Dispositivo personal</span>`;
+    } else if (d.ssid_type === "personal") {
+      ispBadge = `<span class="badge badge-personal" title="Nombre personal - posible dispositivo de persona">${d.ssid_icon} ${d.ssid_label}</span>`;
+    } else if (d.ssid_type === "computer") {
+      ispBadge = `<span class="badge badge-computer" title="Computadora personal">${d.ssid_icon} ${d.ssid_label}</span>`;
+    } else if (d.ssid_type === "mobile") {
+      ispBadge = `<span class="badge badge-mobile" title="Dispositivo móvil">${d.ssid_icon} ${d.ssid_label}</span>`;
+    } else if (d.type === "BLE") {
+      ispBadge = `<span class="badge badge-info" style="background:#1a1a2e" title="Dispositivo Bluetooth">📱 Bluetooth LE</span>`;
+    } else {
+      // Fallback: mostrar el ícono y label analizado
+      const icon = d.ssid_icon || "📶";
+      const label = d.ssid_label || "WiFi";
+      ispBadge = `<span class="badge badge-info" style="background:#1a1a2e; opacity:0.9" title="Red WiFi estándar">${icon} ${label}</span>`;
+    }
+
+    let levelBadge = "";
+    if (wl)              levelBadge = `<span class="badge badge-wl">✅ Auth</span>`;
+    else if (level==="CRITICAL") levelBadge = `<span class="badge badge-critical">CRÍTICO</span>`;
+    else if (level==="WARNING")  levelBadge = `<span class="badge badge-warning">AVISO</span>`;
+    else                         levelBadge = `<span class="badge badge-info">OK</span>`;
+
+    let flags = [];
+    if (isRand) flags.push(`<span class="badge badge-random">🔵RAND</span>`);
+    if (isHid)  flags.push(`<span class="badge badge-hidden">🔒OCL</span>`);
+    if (!flags.length) flags.push("—");
+
+    return `<tr class="${rowClass}" onclick="showDetail(${i})" title="Clic para ver detalle">
+      <td class="mono">${d.type||""}</td>
+      <td>${escapeHtml(ssid)}</td>
+      <td>${escapeHtml(mfr)}</td>
+      <td>${ispBadge}</td>
+      <td class="mono" style="font-size:10px">${d.mac||""}</td>
+      <td class="mono">${d.rssi||""}dBm</td>
+      <td class="mono">${dist}m</td>
+      <td class="mono">${ch}</td>
+      <td>${levelBadge}</td>
+      <td>${flags.join(" ")}</td>
+    </tr>`;
+  }).join("");
+}
+
+function escapeHtml(str) {
+  if (!str) return "";
+  return str.replace(/[&<>]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    return m;
+  });
+}
+
+// ──────────────────────────────────────────────
+//  MODAL DETALLE
+// ──────────────────────────────────────────────
+function showDetail(idx) {
+  const d = allDevices[idx];
+  if (!d) return;
+
+  const wl    = d.whitelisted;
+  const isHot = d.is_hotspot;
+  const isRand= d.mac_random;
+  const isHid = d.hidden;
+  const level = d.level || "INFO";
+
+  let headerBg, icon, title;
+  if      (wl)               { headerBg="#0d1040"; icon="✅"; title="AUTORIZADO"; }
+  else if (isHot)            { headerBg="#3a0505"; icon="🔥"; title="HOTSPOT PERSONAL DETECTADO"; }
+  else if (level==="CRITICAL"){ headerBg="#3a0a0a"; icon="🚨"; title="ALERTA CRÍTICA"; }
+  else if (level==="WARNING") { headerBg="#3a2500"; icon="⚠️"; title="ADVERTENCIA"; }
+  else                        { headerBg="#0a2a14"; icon="ℹ️"; title="INFORMACIÓN"; }
+
+  const hdr = document.getElementById("modalHeader");
+  hdr.style.background = headerBg;
+  document.getElementById("modalTitle").textContent = `${icon} ${title}`;
+
+  const rssi  = d.rssi || 0;
+  const dist  = parseFloat(d.distance) || 0;
+  const pct   = Math.max(0, Math.min(100, (rssi + 100) / 70 * 100));
+  const barColor = pct > 70 ? "var(--critical)" : pct > 40 ? "var(--warning)" : "var(--info)";
+  const quality  = rssi >= -50 ? "Excelente" : rssi >= -65 ? "Buena" : rssi >= -75 ? "Regular" : "Débil";
+
+  let analysis = [];
+  if (isHot)  analysis.push({cls:"alert-hotspot", text:`🔥 HOTSPOT PERSONAL: "${d.ssid}" — ${d.ssid_label||""}. Un celular está compartiendo internet activamente. Altamente sospechoso en un examen.`});
+  if (isRand) analysis.push({cls:"alert-warning",  text:`🔵 MAC ALEATORIA: El dispositivo usa una dirección MAC temporal/falsa. iOS 14+, Android 10+, Windows 10+ hacen esto para privacidad. Indica un smartphone moderno intentando no ser identificado.`});
+  if (isHid)  analysis.push({cls:"alert-warning",  text:`🔒 RED OCULTA: El nombre (SSID) está oculto, pero la señal es detectable. Puede ser un hotspot configurado para pasar desapercibido.`});
+  if (d.is_isp) analysis.push({cls:"alert-info",   text:`🌐 RED ISP: ${d.ssid_label||""}. Probablemente un router fijo del entorno, no un celular.`});
+  if (d.manufacturer?.includes("Apple"))   analysis.push({cls:"alert-critical", text:"• DISPOSITIVO APPLE: iPhone, iPad o MacBook activo en el área."});
+  if (d.manufacturer?.match(/Samsung|Xiaomi|Huawei/)) analysis.push({cls:"alert-critical", text:`• SMARTPHONE ${d.manufacturer.toUpperCase()}: Teléfono Android activo.`});
+  if (d.type==="BLE") analysis.push({cls:"alert-info", text:"• SEÑAL BLE: Bluetooth Low Energy. Típico de audífonos, relojes inteligentes o dispositivos de comunicación cercana."});
+  if (!analysis.length) analysis.push({cls:"alert-info", text:"Sin características especiales de riesgo. Monitorear si la señal persiste."});
+
+  document.getElementById("modalBody").innerHTML = `
+    <div class="detail-section">
+      <h4>Intensidad de Señal</h4>
+      <div class="signal-bar-wrap">
+        <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px">
+          <span>RSSI: <strong>${rssi} dBm</strong></span>
+          <span>Calidad: <strong style="color:${barColor}">${quality}</strong></span>
+        </div>
+        <div class="signal-bar-track">
+          <div class="signal-bar-fill" style="width:${pct}%;background:${barColor}"></div>
+        </div>
+        <div class="signal-labels">
+          <span>-100 dBm<br>Muy débil</span>
+          <span>-70 dBm<br>Débil</span>
+          <span>-50 dBm<br>Fuerte</span>
+          <span>-30 dBm<br>Muy fuerte</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h4>Información del Dispositivo</h4>
+      <div class="detail-row"><span class="detail-key">Tipo de señal</span><span class="detail-val" style="color:var(--accent)">${d.type||"—"}</span></div>
+      <div class="detail-row"><span class="detail-key">SSID / Nombre</span><span class="detail-val">${escapeHtml(d.ssid) || "[Oculto]"}</span></div>
+      <div class="detail-row"><span class="detail-key">MAC Address</span><span class="detail-val">${d.mac||"—"}</span></div>
+      <div class="detail-row"><span class="detail-key">Fabricante (OUI)</span><span class="detail-val" style="color:${isRand?"var(--random)":"var(--text)"}">${isRand?"MAC Aleatoria (Privacidad)":d.manufacturer||"Desconocido"}</span></div>
+      <div class="detail-row"><span class="detail-key">Canal WiFi</span><span class="detail-val">${d.channel||"—"}</span></div>
+      <div class="detail-row"><span class="detail-key">Distancia est.</span><span class="detail-val" style="color:var(--accent)">~${dist.toFixed(1)} metros</span></div>
+      <div class="detail-row"><span class="detail-key">ISP / Hotspot</span><span class="detail-val">${d.ssid_label||"—"}</span></div>
+      <div class="detail-row"><span class="detail-key">En whitelist</span><span class="detail-val" style="color:${wl?"var(--info)":"var(--muted)"}">${wl?"✅ Sí":"No"}</span></div>
+    </div>
+
+    <div class="detail-section">
+      <h4>Análisis en Contexto de Examen</h4>
+      ${analysis.map(a=>`<div class="alert-box ${a.cls}">${a.text}</div>`).join("")}
+    </div>
+  `;
+
+  document.getElementById("modalOverlay").classList.add("open");
+}
+
+function closeModal(e) {
+  if (e.target.id === "modalOverlay")
+    document.getElementById("modalOverlay").classList.remove("open");
+}
+
+// ──────────────────────────────────────────────
+//  LOG
+// ──────────────────────────────────────────────
+function addLog(text, level="INFO") {
+  const ts   = new Date().toLocaleTimeString();
+  const icon = {CRITICAL:"🔴",WARNING:"🟡",INFO:"🟢",HOTSPOT:"🔥"}[level]||"⚪";
+  const cls  = `log-${level}`;
+  const line = `<div class="${cls}">${icon} [${ts}] ${text}</div>`;
+  logLines.push(line);
+  if (logLines.length > 300) logLines.shift();
+  const box = document.getElementById("logBox");
+  box.innerHTML = logLines.join("");
+  box.scrollTop = box.scrollHeight;
+}
+
+function clearLog() {
+  logLines = [];
+  document.getElementById("logBox").innerHTML = "";
+}
+
+function showTab(name) {
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+  document.querySelector(`[onclick="showTab('${name}')"]`).classList.add("active");
+  document.getElementById(`tab-${name}`).classList.add("active");
+}
+
+function sendCmd(cmd) {
+  if (!ws || ws.readyState !== WebSocket.OPEN) {
+    addLog("Sin conexión al servidor", "WARNING"); return;
+  }
+  ws.send(JSON.stringify(cmd));
+}
+
+function sendModel() {
+  sendCmd({
+    cmd: "SET_MODEL",
+    txPower_wifi: parseFloat(document.getElementById("txpWifi").value),
+    txPower_ble:  parseFloat(document.getElementById("txpBle").value),
+    n:            parseFloat(document.getElementById("nFactor").value),
+  });
+  sendCmd({
+    cmd: "SET_THRESHOLDS",
+    rssi_critical: parseInt(document.getElementById("rssiCrit").value),
+    rssi_warning:  parseInt(document.getElementById("rssiWarn").value),
+  });
+  addLog("Modelo enviado al ESP32", "INFO");
+}
+
+function sendCalibration() {
+  sendCmd({
+    cmd:      "CALIBRATE",
+    distance: parseFloat(document.getElementById("calDist").value),
+    rssi:     parseInt(document.getElementById("calRssi").value),
+    type:     document.getElementById("calType").value,
+  });
+  addLog("Calibración enviada", "INFO");
+}
+
+function addWifiWL() {
+  const v = document.getElementById("wlSsid").value.trim();
+  if (v) { sendCmd({cmd:"ADD_WIFI_WL", ssid:v}); addLog(`Whitelist WiFi: '${v}'`,"INFO"); document.getElementById("wlSsid").value=""; }
+}
+function addBleWL() {
+  const v = document.getElementById("wlMac").value.trim();
+  if (v) { sendCmd({cmd:"ADD_BLE_WL", mac:v}); addLog(`Whitelist BLE: ${v}`,"INFO"); document.getElementById("wlMac").value=""; }
+}
+function clearWL() { sendCmd({cmd:"CLEAR_WL"}); addLog("Whitelist limpiada","INFO"); }
+
+function exportCSV() {
+  if (!allDevices.length) { addLog("Sin datos para exportar","WARNING"); return; }
+  const header = "tipo,ssid,fabricante,isp_hotspot,mac,rssi,distancia_m,canal,nivel,mac_random,oculta,whitelisted\n";
+  const rows = allDevices.map(d =>
+    [d.type,d.ssid,d.manufacturer,d.ssid_label,d.mac,d.rssi,d.distance,d.channel,d.level,d.mac_random,d.hidden,d.whitelisted].join(",")
+  ).join("\n");
+  const blob = new Blob([header+rows], {type:"text/csv"});
+  const a    = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `emf_${new Date().toISOString().slice(0,19).replace(/:/g,"-")}.csv`;
+  a.click();
+  addLog("CSV exportado","INFO");
+}
+
+function updateBadge(badgeId, labelId, state, text) {
+  const badge = document.getElementById(badgeId);
+  badge.className = `conn-badge ${state}`;
+  document.getElementById(labelId).textContent = text;
+}
+
+// ── Iniciar ──
+connect();
+</script>
+</body>
+</html>
