@@ -24,7 +24,7 @@ detector-electromagnetico/
 │   └── logs_emf/                   # Sesiones de escaneo (CSV + logs)
 │
 ├── aws/                            # Servidor Cloud EC2
-│   ├── app.py                      # WebSocket server (FastAPI + uvicorn)
+│   ├── server.py                      # WebSocket server (FastAPI + uvicorn)
 │   └── emf.html                    # Dashboard web (JS + WebSocket)
 │
 ├── README.md
@@ -45,7 +45,7 @@ ESP32 (WiFi + BLE Scanner)
        ▼
 ┌───────────────────────────────────┐
 │  EC2 (FastAPI + WebSocket Server)  │
-│  app.py — Puerto 8765             │
+│  server.py — Puerto 8765             │
 │                                   │
 │  • Recibe datos del ESP32         │
 │  • Broadcast a navegadores        │
@@ -109,7 +109,7 @@ El firmware implementa un escáner dual WiFi + BLE que se conecta directamente a
 
 ## Servidor Cloud (EC2)
 
-`aws/app.py` es un servidor FastAPI con WebSockets que corre en el puerto 8765:
+`aws/server.py` es un servidor FastAPI con WebSockets que corre en el puerto 8765:
 
 | Endpoint | Tipo | Descripción |
 |---|---|---|
@@ -178,7 +178,7 @@ Antes de subir, configurar WiFi y IP del EC2 en `src/main.cpp`:
 pip install fastapi uvicorn websockets
 
 # Ejecutar
-python aws/app.py
+python aws/server.py
 ```
 
 El servidor corre en `0.0.0.0:8765`. El dashboard web (`aws/emf.html`) se puede servir con Apache, Nginx, o directamente desde FastAPI.
